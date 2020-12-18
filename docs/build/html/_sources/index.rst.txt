@@ -14,9 +14,3 @@ DeepClassifier is a python package based on pytorch, which is easy-use and gener
 
    QuickStart/index.rst
    Models/index.rst
-
-Indices and tables
-==================
-
-* :ref:`modindex`
-* :ref:`search`

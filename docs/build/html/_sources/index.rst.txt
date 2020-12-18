@@ -5,17 +5,18 @@
 
 Welcome to DeepClassifier's documentation!
 ==========================================
-DeepClassifier，is a easy-use text classification python library.
+DeepClassifier is a python package based on pytorch, which is easy-use and general for text classification task.🤩
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
 
+   QuickStart/index.rst
+   Models/index.rst
 
 Indices and tables
 ==================
 
-* :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

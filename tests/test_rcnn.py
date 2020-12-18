@@ -14,8 +14,8 @@ import numpy as np
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 import torch.optim as optim
-from deepclassifer.models import RCNN
-from deepclassifer.trainers import Trainer
+from deepclassifier.models import RCNN
+from deepclassifier.trainers import Trainer
 from tensorboardX import SummaryWriter
 
 

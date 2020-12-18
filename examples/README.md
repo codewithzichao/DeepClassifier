@@ -1,4 +1,3 @@
-
 ```python
 # -*- coding:utf-8 -*-
 from __future__ import print_function
@@ -8,8 +7,8 @@ import torch.nn as nn
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
 import torch.optim as optim
-from deepclassifer.models import BertTextCNN
-from deepclassifer.trainers import Trainer
+from deepclassifier.models import BertTextCNN
+from deepclassifier.trainers import Trainer
 from tensorboardX import SummaryWriter
 
 

@@ -12,7 +12,7 @@ REQUIRED_PACKAGES = [
 
 setup(
     name="deepclassifier",
-    version="0.0.4",
+    version="0.0.5",
     author="Zichao Li",
     author_email="2843656167@qq.com",
     description="DeepClassifier is aimed at building general text classification model library.It's easy and user-friendly to build any text classification task.",

@@ -16,6 +16,6 @@ DeepClassifier，is a easy-use text classification python library.
 Indices and tables
 ==================
 
-* :ref:`genindex`
+* :ref:`QuickStart`
 * :ref:`modindex`
 * :ref:`search`

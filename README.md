@@ -26,34 +26,26 @@ you can define model like that(take BertTexCNN model as example):👇
 ```python
 
 from deepclassifier.models import BertTextCNN
-# -------------------------define model--------------------------------#
+
 # parameters of model
 embedding_dim = 768  # if you use bert, the default is 768.
 dropout_rate = 0.2
 num_class = 2
 bert_path = "/Users/codewithzichao/Desktop/bert-base-uncased/"
 
-# model
 my_model = BertTextCNN(embedding_dim=embedding_dim,
                        dropout_rate=dropout_rate,
                        num_class=num_class,
                        bert_path=bert_path)
 
-# optimization
 optimizer = optim.Adam(my_model.parameters())
-# loss function
 loss_fn = nn.CrossEntropyLoss()
-
-# -------------------------define model--------------------------------#
-
 ```
 After defining model, you can train/test/predict model like that:👇
 
 ```python
 from deepclassifier.trainers import Trainer
-# -------------------training testing,predicting-----------------------#
 
-# parameters for training,dev,test
 model_name = "berttextcnn"
 save_path = "best.ckpt"
 writer = SummaryWriter("logfie/1")
@@ -82,7 +74,6 @@ pred_data = DataLoader(pred_data, batch_size=1)
 pred_label = my_trainer.predict(pred_data)
 print(pred_label)
 
-# -------------------training testing,predicting-----------------------#
 ```
 
 ## **Contact**

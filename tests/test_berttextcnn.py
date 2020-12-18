@@ -63,7 +63,7 @@ test_label = torch.from_numpy(np.array([int(x > 0.5) for x in np.random.randn(10
 my_test_data = my_dataset(test_data,test_mask ,dev_label)
 final_test_data = DataLoader(my_test_data, batch_size=batch_size, shuffle=True)
 
-my_model =  BertTextCNN(768,0.2,2,"/Users/codewithzichao/Desktop/开源的库/DeepClassifier/bert-base-uncased/")
+my_model =  BertTextCNN(768,0.2,2,"/Users/codewithzichao/Desktop/开源的库/bert-base-uncased/")
 optimizer = optim.Adam(my_model.parameters())
 loss_fn = nn.CrossEntropyLoss()
 save_path = "best.ckpt"

@@ -3,8 +3,9 @@ DeepClassifier is a python package based on pytorch, which is easy-use and gener
 If you want to know more information about DeepClassifier, please see the [**documentation**](https://deepclassifier.readthedocs.io/en/latest/). So let's start!🤩
 > If you think DeepClassifier is good, please star and fork it to give me motivation to continue maintenance！🤩 And it's my pleasure that if Deepclassifier is helpful to you!🥰
 
-## **installation**
+## **Installation**
 Just like other Python packages, DeepClassifier also can be installed through pip.The command of installation is `pip install -U deepclassifier`.
+
 ## **Models**
 Here is a list of models that have been integrated into DeepClassifier. In the future, we will integrate more models into DeepClassifier. Welcome to join us!🤩
 1. **TextCNN:** [Convolutional Neural Networks for Sentence Classiﬁcation](https://www.aclweb.org/anthology/D14-1181.pdf) ,2014 EMNLP
@@ -76,5 +77,5 @@ print(pred_label)
 
 ```
 
-## **Contact**
-If you want any questions about DeepClassifier, welcome to submit issue or pull requests!
+## **Contact me**
+If you want any questions about DeepClassifier, welcome to submit issue or pull requests! And welcome to communicate with me through 2843656167@qq.com.🥳

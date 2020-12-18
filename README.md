@@ -19,11 +19,12 @@ Here is a list of models that have been integrated into DeepClassifier. In the f
 ...
    
 ## Quick start
-I wiil show you that how to use DeepClassifier below.🥰 Click [**[here]**]() to display the complete code.
+I wiil show you that how to use DeepClassifier below.🥰 Click [**[here]**](https://github.com/codewithzichao/DeepClassifier/blob/master/examples/README.md) to display the complete code.
 
 you can define model like that(take BertTexCNN model as example):👇
 ```python
 
+from deepclassifer.models import BertTextCNN
 # -------------------------define model--------------------------------#
 # parameters of model
 embedding_dim = 768  # if you use bert, the default is 768.
@@ -47,6 +48,7 @@ loss_fn = nn.CrossEntropyLoss()
 ```
 After defining model, you can train/test/predict model like that:👇
 ```python
+from deepclassifer.trainers import Trainer
 # -------------------training testing,predicting-----------------------#
 
 # parameters for training,dev,test

@@ -1,3 +1,12 @@
+# -*- coding:utf-8 -*-
+'''
+
+Author:
+    Zichao Li,2843656167@qq.com
+
+'''
+from __future__ import print_function
+
 import torch
 import torch.nn as nn
 from transformers import *

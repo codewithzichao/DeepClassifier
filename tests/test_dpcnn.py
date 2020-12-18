@@ -1,4 +1,13 @@
-# encoding = utf-8
+# -*- coding:utf-8 -*-
+'''
+
+Author:
+    Zichao Li,2843656167@qq.com
+
+'''
+from __future__ import print_function
+
+
 import os
 import torch
 import torch.nn as nn

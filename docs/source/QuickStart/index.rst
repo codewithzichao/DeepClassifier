@@ -5,7 +5,11 @@ I will show you that how to install DeepClassifier.🤩
 
 **installation**
 
-```python
-pip install -u deepclassifier
-```
+The command of installation is below:👇
 
+.. code-block:: sh
+
+ pip install -u deepclassifier
+
+
+So let's start!🥳

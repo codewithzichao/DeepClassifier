@@ -78,7 +78,7 @@ loss_fn = nn.CrossEntropyLoss()
 save_path = "best.ckpt"
 
 writer = SummaryWriter("logfie/1")
-my_trainer = Trainer(model_name="berttextcnn", model=my_model, train_loader=final_train_data, dev_loader=final_dev_data,
+my_trainer = Trainer(model_name="berthan", model=my_model, train_loader=final_train_data, dev_loader=final_dev_data,
                      test_loader=final_test_data, optimizer=optimizer, loss_fn=loss_fn,
                      save_path=save_path, epochs=100, writer=writer, max_norm=0.25, eval_step_interval=10)
 

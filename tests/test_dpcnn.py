@@ -66,6 +66,7 @@ test_data = np.random.randint(0, 100, (100, 60))
 test_label = torch.from_numpy(np.array([int(x > 0.5) for x in np.random.randn(100)]))
 my_test_data = my_dataset(test_data, dev_label)
 final_test_data = DataLoader(my_test_data, batch_size=batch_size, shuffle=True)
+print(dev_data.dtype)
 
 my_model = DPCNN(100, 0.2,2, 100, 60)
 optimizer = optim.Adam(my_model.parameters())
@@ -73,9 +74,9 @@ loss_fn = nn.CrossEntropyLoss()
 save_path = "best.ckpt"
 
 writer = SummaryWriter("logfie/1")
-my_trainer = Trainer(model_name="textcnn", model=my_model, train_loader=final_train_data, dev_loader=final_dev_data,
+my_trainer = Trainer(model_name="dpcnn", model=my_model, train_loader=final_train_data, dev_loader=final_dev_data,
                      test_loader=final_test_data, optimizer=optimizer, loss_fn=loss_fn,
-                     save_path=save_path, epochs=100, writer=writer, max_norm=0.25, step_interval=10)
+                     save_path=save_path, epochs=100, writer=writer, max_norm=0.25, eval_step_interval=10)
 
 # 训练
 my_trainer.train()

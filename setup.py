@@ -7,6 +7,7 @@ with codecs.open("README.md", "r", encoding="utf-8") as fh:
 REQUIRED_PACKAGES = [
     "torch>=1.1.0",
     "transformers>=4.0.0",
+    "scikit-learn",
     "tensorboardX"
 ]
 
@@ -25,7 +26,7 @@ setup(
     ),
     python_requires=">=3.6.0",
     install_requires=REQUIRED_PACKAGES,
-    #extra_require={},
+    # extra_require={},
     entry_points={},
     classifiers=[
         "License :: OSI Approved :: Apache Software License",

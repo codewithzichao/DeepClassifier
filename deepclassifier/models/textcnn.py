@@ -90,6 +90,7 @@ class TextCNN(nn.Module):
         :param inputs: [batch_size,seq_length]
         :return: [batch_size,num_class]
         '''
+
         x = self.embedding(input_ids)
         x = x.permute(0, 2, 1)
         cnn_pool_result = []

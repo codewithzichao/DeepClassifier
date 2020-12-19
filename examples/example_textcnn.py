@@ -21,9 +21,9 @@ from preprocessing import load_pretrained_embedding, texts_convert_to_ids,pad_se
 from sklearn.model_selection import train_test_split
 
 # 数据路径
-base_path = "/Users/codewithzichao/MyGithubProjects/nlp_programs/DeepClassifier/examples/sentiment-analysis-on-movie-reviews/"
-train_data_path = base_path + "train.tsv"
-test_data_path = base_path + "test.tsv"
+base_path = os.getcwd()
+train_data_path = base_path + "/sentiment-analysis-on-movie-reviews/train.tsv"
+test_data_path = base_path + "/sentiment-analysis-on-movie-reviews/test.tsv"
 
 # 获取数据
 train_data_df = pd.read_csv(train_data_path, sep="\t")
@@ -37,7 +37,7 @@ dev_label = dev_data_df.iloc[:, -1].values
 test_data = test_data_df.iloc[:, -1].values
 
 # 获取词典与词向量
-pretrained_embedding_file_path = "/Users/codewithzichao/MyGithubProjects/nlp_programs/DeepClassifier/examples/glove/glove.6B.50d.txt"
+pretrained_embedding_file_path = base_path+"/glove/glove.6B.50d.txt"
 word2idx, embedding_matrix = load_pretrained_embedding(pretrained_embedding_file_path=pretrained_embedding_file_path)
 
 # 文本向量化

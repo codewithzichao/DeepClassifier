@@ -21,9 +21,9 @@ from transformers import BertTokenizer
 from sklearn.model_selection import train_test_split
 
 # 数据路径
-base_path = "/Users/codewithzichao/MyGithubProjects/nlp_programs/DeepClassifier/examples/sentiment-analysis-on-movie-reviews/"
-train_data_path = base_path + "train.tsv"
-test_data_path = base_path + "test.tsv"
+base_path = os.getcwd()
+train_data_path = base_path + "/sentiment-analysis-on-movie-reviews/train.tsv"
+test_data_path = base_path + "/sentiment-analysis-on-movie-reviews/test.tsv"
 
 # 获取数据
 train_data_df = pd.read_csv(train_data_path, sep="\t")
@@ -93,7 +93,7 @@ class my_dataset1(Dataset):
         return input_ids, attention_mask
 
 
-tokenizer = BertTokenizer(vocab_file="/Users/codewithzichao/Desktop/开源的库/bert-base-uncased/vocab.txt")
+tokenizer = BertTokenizer(vocab_file=base_path+"/bert-base-uncased/vocab.txt")
 # 训练集
 batch_size = 20
 my_train_data = my_dataset(train_data, train_label, 200, tokenizer)

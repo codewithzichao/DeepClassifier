@@ -92,8 +92,17 @@ print(prd_label.shape)
 
 if you want to run  **example_textcnn.py** or **example_berttextcnn.py**, please **download datasets and glove, and replace the data dir.** Have fun!🥰
 
+> Your file dir must be like that:👇
 ```shell
 
+├── bert-base-uncased
+│   ├── config.json
+│   ├── pytorch_model.bin
+│   ├── rust_model.ot
+│   ├── tf_model.h5
+│   ├── tokenizer.json
+│   ├── tokenizer_config.json
+│   └── vocab.txt
 ├── example_berttextcnn.py
 ├── example_textcnn.py
 ├── glove

@@ -8,7 +8,7 @@
 
 ## EDA
 
-After processing the data,you can do data analysis：
+Before processing the data,you can do data analysis：
 
 ![image](https://github.com/codewithzichao/DeepClassifier/blob/master/examples/len.png)
 

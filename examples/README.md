@@ -2,9 +2,11 @@
  In this part, I will show you how to use DeepClassifier to carry text classification task.🥰
 
 ## Dataset 
-   **kaggle dataset**：https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews
+   **kaggle dataset:** [sentiment-analysis-on-movie-reviews](https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews)
 
-   **Pretrained embedding**: GloVe [download](https://apache-mxnet.s3.cn-north-1.amazonaws.com.cn/gluon/embeddings/glove/glove.6B.zip)
+   **Pretrained embedding:** GloVe [download](https://apache-mxnet.s3.cn-north-1.amazonaws.com.cn/gluon/embeddings/glove/glove.6B.zip)
+
+   **BERT pretrained weights:** [download](https://huggingface.co/bert-base-uncased)
 
 ## EDA
 

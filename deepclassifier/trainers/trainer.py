@@ -53,14 +53,14 @@ class Trainer(object):
             for idx, batch_data in enumerate(self.train_loader, start=1):
 
                 if self.model_name in ["textcnn", "rcnn", "han", "dpcnn"]:
-                    input_ids, y_true = batch_data[0], batch_data[1]
+                    input_ids, y_true = batch_data[0], batch_data[-1]
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
                     if len(batch_data) == 3:
-                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[2]
+                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[-1]
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
-                        input_ids, y_true = batch_data[0], batch_data[1]
+                        input_ids, y_true = batch_data[0], batch_data[-1]
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")
@@ -112,14 +112,14 @@ class Trainer(object):
             for idx, batch_data in enumerate(self.dev_loader, start=1):
 
                 if self.model_name in ["textcnn", "rcnn", "han", "dpcnn"]:
-                    input_ids, y_true = batch_data[0], batch_data[1]
+                    input_ids, y_true = batch_data[0], batch_data[-1]
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
                     if len(batch_data) == 3:
-                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[2]
+                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[-1]
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
-                        input_ids, y_true = batch_data[0], batch_data[1]
+                        input_ids, y_true = batch_data[0], batch_data[-1]
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")
@@ -150,14 +150,14 @@ class Trainer(object):
             for idx, batch_data in enumerate(self.test_loader, start=1):
 
                 if self.model_name in ["textcnn", "rcnn", "han", "dpcnn"]:
-                    input_ids, y_true = batch_data[0], batch_data[1]
+                    input_ids, y_true = batch_data[0], batch_data[-1]
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
                     if len(batch_data) == 3:
-                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[2]
+                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[-1]
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
-                        input_ids, y_true = batch_data[0], batch_data[1]
+                        input_ids, y_true = batch_data[0], batch_data[-1]
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")
@@ -188,11 +188,11 @@ class Trainer(object):
                     input_ids = batch_data
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
-                    if len(batch_data) == 3:
-                        input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[2]
+                    if len(batch_data) == 2:
+                        input_ids, attention_mask = batch_data[0], batch_data[1]
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
-                        input_ids, y_true = batch_data[0], batch_data[1]
+                        input_ids=batch_data
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")

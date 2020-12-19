@@ -18,14 +18,13 @@ Here is a list of models that have been integrated into DeepClassifier. In the f
 8. **BertDPCNN:** BERT+DPCNN
 9. **BertHAN:** BERT+HAN
 ...
-   
+  
 ## Quick start
 I wiil show you that how to use DeepClassifier below.🥰 Click [**[here]**](https://github.com/codewithzichao/DeepClassifier/blob/master/examples) to display the complete code.
 
-you can define model like that(take BertTexCNN model as example):👇
+you can define model like that(take BertTextCNN model as example):👇
 
 ```python
-
 from deepclassifier.models import BertTextCNN
 
 # parameters of model
@@ -53,10 +52,12 @@ writer = SummaryWriter("logfie/1")
 max_norm = 0.25
 eval_step_interval = 20
 
-my_trainer = Trainer(model_name=model_name, model=my_model, train_loader=train_loader, dev_loader=dev_loader,
-                     test_loader=test_loader, optimizer=optimizer, loss_fn=loss_fn,
-                     save_path=save_path, epochs=1, writer=writer, max_norm=max_norm,
-                     eval_step_interval=eval_step_interval)
+my_trainer =Trainer(model_name=model_name,model=my_model,
+                    train_loader=train_loader,dev_loader=dev_loader,
+                    test_loader=test_loader, optimizer=optimizer, 
+                    loss_fn=loss_fn,save_path=save_path, epochs=1, 
+                    writer=writer, max_norm=max_norm,
+                    eval_step_interval=eval_step_interval)
 
 # training
 my_trainer.train()
@@ -76,3 +77,16 @@ print(pred_label)
 
 ## **Contact me**
 If you want any questions about DeepClassifier, welcome to submit issue or pull requests! And welcome to communicate with me through 2843656167@qq.com.🥳
+
+## Citation
+```tex
+@misc{zichao2020deepclassifier,
+author = {Zichao Li},
+title = {DeepClassifier: use-friendly and flexiable package of NLP based text classification models},
+year = {2020},
+publisher = {GitHub},
+journal = {GitHub Repository},
+howpublished = {\url{https://github.com/codewithzichao/DeepClassifier}},
+}
+```
+

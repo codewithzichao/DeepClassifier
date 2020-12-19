@@ -27,6 +27,10 @@ Details can be seen **proprecessing.py**.
 ## Training
 The core code is below:🥰
 
+**TextCNN**
+
+Details can be seen **example_textcnn.py**.
+
 ```python
 from deepclassifier.models import TextCNN
 from deepclassifier.trainers import Trainer
@@ -50,11 +54,45 @@ print(p, r, f1)
 # 打印在验证集上最好的f1值
 print(my_trainer.best_f1)
 ```
-Details can be seen **example_textcnn.py**.
 
-if you want to run  **example_textcnn.py**, please **download datasets and glove, and replace the data dir.** Have fun!🥰
+**BertTextCNN**
+
+Details can be seen **example_berttextcnn.py**.
+```python
+from deepclassifier.models import BertTextCNN
+from deepclassifier.trainers import Trainer
+# 定义模型
+my_model = BertTextCNN(embedding_dim=768, dropout_rate=0.2, num_class=5,
+                       bert_path=bert_path)
+
+optimizer = optim.Adam(my_model.parameters())
+loss_fn = nn.CrossEntropyLoss()
+save_path = "best.ckpt"
+
+writer = SummaryWriter("logfie/1")
+my_trainer = Trainer(model_name="berttextcnn", model=my_model, train_loader=train_loader, dev_loader=dev_loader,
+                     test_loader=None, optimizer=optimizer, loss_fn=loss_fn, save_path=save_path, epochs=100,
+                     writer=writer, max_norm=0.25, eval_step_interval=10, device='cpu')
+
+# 训练
+my_trainer.train()
+# 测试
+p, r, f1 = my_trainer.test()
+print(p, r, f1)
+# 打印在验证集上最好的f1值
+print(my_trainer.best_f1)
+
+# 预测
+prd_label = my_trainer.predict(pred_data)
+print(prd_label.shape)
+
+```
+
+if you want to run  **example_textcnn.py** or **example_berttextcnn.py**, please **download datasets and glove, and replace the data dir.** Have fun!🥰
 
 ```shell
+
+├── example_berttextcnn.py
 ├── example_textcnn.py
 ├── glove
 │   ├── glove.6B.100d.txt

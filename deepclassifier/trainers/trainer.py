@@ -13,7 +13,8 @@ import numpy as np
 
 
 class Trainer(object):
-    def __init__(self, model_name,
+    def __init__(self,
+                 model_name,
                  model,
                  train_loader,
                  dev_loader,
@@ -54,13 +55,19 @@ class Trainer(object):
 
                 if self.model_name in ["textcnn", "rcnn", "han", "dpcnn"]:
                     input_ids, y_true = batch_data[0], batch_data[-1]
+                    if y_true.shape !=1:
+                        y_true=y_true.squeeze(dim=-1)
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
                     if len(batch_data) == 3:
                         input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[-1]
+                        if y_true.shape !=1:
+                            y_true=y_true.squeeze(dim=-1)
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
                         input_ids, y_true = batch_data[0], batch_data[-1]
+                        if y_true.shape !=1:
+                            y_true=y_true.squeeze(dim=-1)
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")
@@ -113,13 +120,19 @@ class Trainer(object):
 
                 if self.model_name in ["textcnn", "rcnn", "han", "dpcnn"]:
                     input_ids, y_true = batch_data[0], batch_data[-1]
+                    if y_true.shape !=1:
+                        y_true=y_true.squeeze(dim=-1)
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
                     if len(batch_data) == 3:
                         input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[-1]
+                        if y_true.shape !=1:
+                            y_true=y_true.squeeze(dim=-1)
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
                         input_ids, y_true = batch_data[0], batch_data[-1]
+                        if y_true.shape !=1:
+                            y_true=y_true.squeeze(dim=-1)
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")
@@ -151,13 +164,19 @@ class Trainer(object):
 
                 if self.model_name in ["textcnn", "rcnn", "han", "dpcnn"]:
                     input_ids, y_true = batch_data[0], batch_data[-1]
+                    if y_true.shape !=1:
+                        y_true=y_true.squeeze(dim=-1)
                     logits = self.model(input_ids.to(self.device))
                 elif self.model_name in ["berttextcnn", "bertrcnn", "berthan", "bertdpcnn"]:
                     if len(batch_data) == 3:
                         input_ids, attention_mask, y_true = batch_data[0], batch_data[1], batch_data[-1]
+                        if y_true.shape !=1:
+                            y_true=y_true.squeeze(dim=-1)
                         logits = self.model(input_ids.to(self.device), attention_mask.to(self.device))
                     else:
                         input_ids, y_true = batch_data[0], batch_data[-1]
+                        if y_true.shape !=1:
+                            y_true=y_true.squeeze(dim=-1)
                         logits = self.model(input_ids.to(self.device))
                 else:
                     raise ValueError("the number of batch_data is wrong!")

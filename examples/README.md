@@ -10,9 +10,9 @@
 
 After processing the data,you can do data analysis：
 
-![](/examples/len.png)
+![](https://github.com/codewithzichao/DeepClassifier/blob/master/examples/len.png)
 
-![](examples/label.png)
+![](https://github.com/codewithzichao/DeepClassifier/blob/master/examples/label.png)
 
 ## Preprocessing
 

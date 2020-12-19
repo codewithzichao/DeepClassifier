@@ -90,7 +90,7 @@ class my_dataset1(Dataset):
             input_ids += [0] * extra
             attention_mask += [0.0] * extra
 
-        return input_ids, attention_mask
+        return torch.LongTensor(input_ids), torch.FloatTensor(attention_mask)
 
 
 tokenizer = BertTokenizer(vocab_file=base_path+"/bert-base-uncased/vocab.txt")

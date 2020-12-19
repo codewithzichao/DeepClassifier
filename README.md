@@ -20,7 +20,7 @@ Here is a list of models that have been integrated into DeepClassifier. In the f
 ...
    
 ## Quick start
-I wiil show you that how to use DeepClassifier below.🥰 Click [**[here]**](https://github.com/codewithzichao/DeepClassifier/blob/master/examples/README.md) to display the complete code.
+I wiil show you that how to use DeepClassifier below.🥰 Click [**[here]**](https://github.com/codewithzichao/DeepClassifier/blob/master/examples) to display the complete code.
 
 you can define model like that(take BertTexCNN model as example):👇
 
@@ -68,9 +68,6 @@ p, r, f1 = my_trainer.test()
 print(p, r, f1)
 
 # predict
-pred_data = np.random.randint(0, 100, (100, 60))
-pred_mask = np.random.randint(0, 1, (100, 60))
-pred_data = my_dataset1(pred_data, pred_mask)  # Avoiding padding token to participate in gradient calculation
 pred_data = DataLoader(pred_data, batch_size=1)
 pred_label = my_trainer.predict(pred_data)
 print(pred_label)

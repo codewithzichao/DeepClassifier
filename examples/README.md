@@ -55,6 +55,10 @@ p, r, f1 = my_trainer.test()
 print(p, r, f1)
 # 打印在验证集上最好的f1值
 print(my_trainer.best_f1)
+
+# 预测
+pred_label = my_trainer.predict(pred_data)
+print(pred_label.shape)
 ```
 
 **BertTextCNN**
@@ -85,8 +89,8 @@ print(p, r, f1)
 print(my_trainer.best_f1)
 
 # 预测
-prd_label = my_trainer.predict(pred_data)
-print(prd_label.shape)
+pred_label = my_trainer.predict(pred_data)
+print(pred_label.shape)
 
 ```
 

@@ -24,6 +24,7 @@ from sklearn.model_selection import train_test_split
 base_path = os.getcwd()
 train_data_path = base_path + "/sentiment-analysis-on-movie-reviews/train.tsv"
 test_data_path = base_path + "/sentiment-analysis-on-movie-reviews/test.tsv"
+bert_path = base_path + "/bert-base-uncased"
 
 # 获取数据
 train_data_df = pd.read_csv(train_data_path, sep="\t")
@@ -93,7 +94,7 @@ class my_dataset1(Dataset):
         return torch.LongTensor(input_ids), torch.FloatTensor(attention_mask)
 
 
-tokenizer = BertTokenizer(vocab_file=base_path+"/bert-base-uncased/vocab.txt")
+tokenizer = BertTokenizer(vocab_file=bert_path+"/vocab.txt")
 # 训练集
 batch_size = 20
 my_train_data = my_dataset(train_data, train_label, 200, tokenizer)
@@ -107,7 +108,7 @@ pred_data = DataLoader(pred_data, batch_size=1)
 
 # 定义模型
 my_model = BertTextCNN(embedding_dim=768, dropout_rate=0.2, num_class=5,
-                       bert_path="/Users/codewithzichao/Desktop/开源的库/bert-base-uncased/")
+                       bert_path=bert_path)
 
 optimizer = optim.Adam(my_model.parameters())
 loss_fn = nn.CrossEntropyLoss()
